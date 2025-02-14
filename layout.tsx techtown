@@ -1,0 +1,30 @@
+import "@/styles/globals.css"
+import { Inter } from "next/font/google"
+import Header from "@/components/header"
+import Footer from "@/components/footer"
+import type React from "react" // Added import for React
+
+const inter = Inter({ subsets: ["latin"] })
+
+export const metadata = {
+  title: "Tech Town - Marketing and Branding Services",
+  description:
+    "Tech Town provides top-notch marketing and branding services across Pakistan, specializing in ride-hailing tech companies.",
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en">
+      <body className={`${inter.className} flex flex-col min-h-screen`}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
+    </html>
+  )
+}
+
